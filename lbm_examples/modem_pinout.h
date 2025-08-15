@@ -35,81 +35,81 @@
 #define __MODEM_PIN_NAMES_H__
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-/*
- * -----------------------------------------------------------------------------
- * --- DEPENDENCIES ------------------------------------------------------------
- */
+    /*
+     * -----------------------------------------------------------------------------
+     * --- DEPENDENCIES ------------------------------------------------------------
+     */
 
 #include "smtc_hal_gpio_pin_names.h"
 
-/*
- * -----------------------------------------------------------------------------
- * --- PUBLIC MACROS -----------------------------------------------------------
- */
+    /*
+     * -----------------------------------------------------------------------------
+     * --- PUBLIC MACROS -----------------------------------------------------------
+     */
 
-/*
- * -----------------------------------------------------------------------------
- * --- PUBLIC CONSTANTS --------------------------------------------------------
- */
+    /*
+     * -----------------------------------------------------------------------------
+     * --- PUBLIC CONSTANTS --------------------------------------------------------
+     */
 
-/********************************************************************************/
-/*                         Application     dependant                            */
-/********************************************************************************/
-/* clang-format off */
+    /********************************************************************************/
+    /*                         Application     dependant                            */
+    /********************************************************************************/
+    /* clang-format off */
 
 //Debug uart specific pinout for debug print
-#define DEBUG_UART_TX           PA_2
-#define DEBUG_UART_RX           PA_3
+#define DEBUG_UART_TX          0
+#define DEBUG_UART_RX          0
+
 
 //Radio specific pinout and peripherals
-#define RADIO_NRST              PA_0
-#define RADIO_SPI_MOSI          PA_7
-#define RADIO_SPI_MISO          PA_6
-#define RADIO_SPI_SCLK          PA_5
+#define RADIO_NRST              8
+#define RADIO_SPI_MOSI          6
+#define RADIO_SPI_MISO          3
+#define RADIO_SPI_SCLK          5
 #if defined( SX1272 ) || defined( SX1276 )
-#define RADIO_NSS               PB_6
-#define RADIO_DIO_0             PA_10
-#define RADIO_DIO_1             PB_3
-#define RADIO_DIO_2             PB_5
-#define RADIO_ANTENNA_SWITCH    PC_1
+#define RADIO_NSS              0
+#define RADIO_DIO_0            0
+#define RADIO_DIO_1            0
+#define RADIO_DIO_2            0
+#define RADIO_ANTENNA_SWITCH   0
 #else
-#define RADIO_NSS               PA_8
-#define RADIO_DIOX              PB_4
-#define RADIO_BUSY_PIN          PB_3
+#define RADIO_NSS              7
+#define RADIO_DIOX             47
+#define RADIO_BUSY_PIN         48
 #endif
 
-#define RADIO_SPI_ID            1
+#define RADIO_SPI_ID            1  //没有使用
 
 #if defined (SX126X)
-#define SX126X_RADIO_RF_SWITCH_CTRL    PA_9
+#define SX126X_RADIO_RF_SWITCH_CTRL   4
 #endif
 
 #if defined (SX128X)
 // For sx128x eval board with 2 antennas
-#define RADIO_ANTENNA_SWITCH    PB_0
+#define RADIO_ANTENNA_SWITCH    0
 #endif
 
 #if defined( LR11XX_TRANSCEIVER )
 // LR11XX_TRANSCEIVER - Use for GNSS LNA control
-#define RADIO_LNA_CTRL          PB_0
-/* LED */
-#define SMTC_LED_RX             PC_0
-#define SMTC_LED_TX             PC_1
-#define SMTC_LED_SCAN           PB_5
+#define RADIO_LNA_CTRL          0
+#define SMTC_LED_RX             0
+#define SMTC_LED_TX             0
+#define SMTC_LED_SCAN           0
 #endif
 
 
-#define EXTI_BUTTON             PC_13
-
+#define EXTI_BUTTON             0
 //Hw modem specific pinout
-#define HW_MODEM_COMMAND_PIN    PC_6
-#define HW_MODEM_EVENT_PIN      PC_5
-#define HW_MODEM_BUSY_PIN       PC_8
-#define HW_MODEM_TX_LINE        PC_10
-#define HW_MODEM_RX_LINE        PC_11
+#define HW_MODEM_COMMAND_PIN    0
+#define HW_MODEM_EVENT_PIN      0
+#define HW_MODEM_BUSY_PIN       0
+#define HW_MODEM_TX_LINE        0
+#define HW_MODEM_RX_LINE        0
 /* clang-format on */
 
 /*
@@ -125,4 +125,4 @@ extern "C" {
 }
 #endif
 
-#endif  //__MODEM_PIN_NAMES_H__
+#endif //__MODEM_PIN_NAMES_H__

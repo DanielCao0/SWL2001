@@ -318,7 +318,10 @@ void ral_sx126x_bsp_get_xosc_cfg( const void* context, ral_xosc_cfg_t* xosc_cfg,
                                   sx126x_tcxo_ctrl_voltages_t* supply_voltage, uint32_t* startup_time_in_tick )
 {
     // No tcxo on Basic Modem sx1261,sx1262 or sx1268 reference boards
-    *xosc_cfg = RAL_XOSC_CFG_XTAL;
+    *xosc_cfg = RAL_XOSC_CFG_TCXO_RADIO_CTRL;
+    *supply_voltage= SX126X_TCXO_CTRL_1_8V;
+    //Timeout duration = Timeout *15.625 µs    TCXO 5ms
+    *startup_time_in_tick = 320;  // No startup time needed for Basic Mod
 }
 
 void ral_sx126x_bsp_get_trim_cap( const void* context, uint8_t* trimming_cap_xta, uint8_t* trimming_cap_xtb )

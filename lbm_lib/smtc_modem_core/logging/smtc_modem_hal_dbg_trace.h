@@ -44,6 +44,7 @@ extern "C" {
  */
 #include <stdint.h>   // C99 types
 #include <stdbool.h>  // bool type
+#include <stdio.h>    // printf function
 
 #include "smtc_modem_hal.h"
 
@@ -62,7 +63,7 @@ extern "C" {
 #endif
 
 #ifndef MODEM_HAL_DBG_TRACE_COLOR
-#define MODEM_HAL_DBG_TRACE_COLOR                         MODEM_HAL_FEATURE_ON
+#define MODEM_HAL_DBG_TRACE_COLOR                         MODEM_HAL_FEATURE_OFF
 #endif
 
 #ifndef MODEM_HAL_DBG_TRACE_RP
@@ -104,7 +105,7 @@ extern "C" {
 
 #if ( MODEM_HAL_DBG_TRACE )
 
-    #define SMTC_MODEM_HAL_TRACE_PRINTF( ... )  smtc_modem_hal_print_trace (  __VA_ARGS__ )
+    #define SMTC_MODEM_HAL_TRACE_PRINTF( ... )  printf (  __VA_ARGS__ )
 
     #define SMTC_MODEM_HAL_TRACE_MSG( msg )                                                         \
     do                                                                                              \
